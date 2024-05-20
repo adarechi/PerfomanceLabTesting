@@ -11,16 +11,16 @@ def add_values(tests: list, values: list) -> list: # функция добавл
     return tests
 
 # получение данных из tests.json и values.json
-with open("tests.json") as t:
-    tests_lst_of_dicts = json.load(t)["tests"]
-
-with open("values.json") as v:
+with open(sys.argv[1]) as v:
     values_lst_of_dicts = json.load(v)["values"]
+
+with open(sys.argv[2]) as t:
+    tests_lst_of_dicts = json.load(t)["tests"]
 
 #добавление значений по ключу "value"
 report_py = {}
 report_py["tests"] = add_values(tests_lst_of_dicts, values_lst_of_dicts)
 
 #запись в report.json
-with open("report.json", "w") as r:
+with open(sys.argv[3], "w") as r:
     json.dump(report_py, r, indent=2)
