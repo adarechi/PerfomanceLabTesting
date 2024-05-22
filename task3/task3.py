@@ -1,5 +1,5 @@
 #task3
-import json
+import sys, json
 
 def add_values(tests: list, values: list) -> list: # функция добавления значения по ключу "value"
     for i in range(len(tests)):
@@ -22,5 +22,5 @@ report_py = {}
 report_py["tests"] = add_values(tests_lst_of_dicts, values_lst_of_dicts)
 
 #запись в report.json
-with open(sys.argv[3], "w") as r:
+with open(sys.argv[3], "w+") as r:
     json.dump(report_py, r, indent=2)
