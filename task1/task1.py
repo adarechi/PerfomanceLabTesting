@@ -13,9 +13,8 @@ def move(arr: list, shift: int) -> list: # функция "смещения" м�
     return new_arr
 
 # ввод и инициализация
-n, m = sys.argv[1].split()
-n = int(n)
-m = int(m)
+n = int(sys.argv[1])
+m = int(sys.argv[2])
 arr = []
 for i in range(1, n+1):
     arr.append(i)
